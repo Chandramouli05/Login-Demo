@@ -1,0 +1,254 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        .form-group>label {
+            font-weight: 500;
+        }
+
+        
+        ion-icon {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
+        #backButton {
+            display: none;
+        }
+
+        span {
+            vertical-align: middle;
+        }
+    </style>
+
+    <script language="javascript">
+        function showPasswordForm(event) {
+            event.preventDefault();
+            registerColumn.style.display = "none";
+            emailEntryForm.style.display = "none";
+            passwordLabel.innerHTML = "Welcome back, " + emailAddressField.value + ".";
+            passwordEntryForm.style.display = "initial";
+            backButton.style.display = "inline-block";
+            titleText.innerHTML = "Back"
+        }
+
+        function showLoginForm() {
+            registerColumn.style.display = "initial";
+            emailEntryForm.style.display = "initial";
+            passwordLabel.innerHTML = "Enter your email ID:";
+            passwordEntryForm.style.display = "none";
+            backButton.style.display = "none";
+            titleText.innerHTML = "Log In"
+        }
+
+    </script>
+
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
+            Log In
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLongTitle">
+                            <ion-icon id="backButton" name="caret-back-circle-outline" onclick="showLoginForm()"></ion-icon>
+                            <span id="titleText">Log In</span>
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm" id="emailEntryForm">
+                                    <form action="" onsubmit="showPasswordForm(event)">
+                                        <div class="form-group">
+                                            <label for="emailAddressField">Enter your email ID:</label>
+                                            <input type="email" class="form-control" id="emailAddressField" required
+                                                placeholder="Email Address">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-success" style="width: 30%">Next &#187;</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-sm" id="passwordEntryForm" style="display: none;">
+                                    <form action="dashboard/Subscriptions.htm">
+                                        <div class="form-group">
+                                            <label for="passwordField" id="passwordLabel"></label>
+                                            <input type="password" class="form-control" id="passwordField" required
+                                                placeholder="Password">
+                                        </div>
+
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+                                            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-success" style="width: 30%">Log In</button>
+                                            <button type="button" class="btn btn-link" data-target="#forgotPasswordModal" data-toggle="modal">Forgot Password</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-sm text-center" id="registerColumn">
+                                    Register now for free!
+                                    <div class="form-group text-center">
+                                        <button type="button" id="registerButton" class="mt-3 btn btn-dark"
+                                            style="width: 200px;" data-toggle="modal"
+                                            data-target="#signUpModal">Register Now!</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg  modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="mx-auto modal-title container" style="text-align: center">
+                                <h5 class="col-12 modal-title text-center " id="signUpModalLabel">Registration</h5>
+                            </div>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form>
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <div class="form-group">
+                                            <label for="FullName">Full Name</label>
+                                            <input type="text" class="form-control" id="Full Name" required
+                                                aria-describedby="Full NameHelp">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email ID</label>
+                                            <input type="email" class="form-control" id="email" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="mobile">Mobile Number</label>
+                                            <input type="tel" class="form-control" id="mobile">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Password</label>
+                                            <input type="password" class="form-control" id="password" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="ConPassword">Confirm Password</label>
+                                            <input type="password" class="form-control" id="ConPassword" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="DOB">Date of Birth</label>
+                                            <input type="date" class="form-control" id="dob">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm">
+                                        <div class="form-group">
+                                            <label for="degree">Degree Name</label>
+                                            <input type="text" class="form-control" id="degree" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="YDC">Year of Degree Completion</label>
+                                            <input type="month" class="form-control" id="YDC" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="college">College Name </label>
+                                            <input type="text" class="form-control" id="college" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="referal">Do you have a referral code? (Optional)</label>
+                                            <input type="text" class="form-control" id="referral">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="mr-sm-2" for="inlineFormCustomSelect">Department Name</label>
+                                            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" required
+                                                id="inlineFormCustomSelect">
+                                                <option selected value="">Choose...</option>
+                                                <option value="1">CSE</option>
+                                                <option value="2">MECH</option>
+                                                <option value="3">ECE</option>
+                                                <option value="4">EEE</option>
+                                                <option value="5">IT</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" class="form-check-input" id="tocAgreeField" required>
+                                            <label class="form-check-label" for="exampleCheck1">I agree to the <a
+                                                    href="#">Terms and Conditions.</a></label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="mx-auto modal-footer" style="text-align:center; width: 500px;">
+                            <button type="button" class="btn btn-success btn-lg btn-block"
+                                onclick="alert('Sign Up Complete. Check your mail.')">Sign Up</button>
+                        </div>
+                    </form>
+                    </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="forgotPasswordModal">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Forgot Password</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form class="centerbox form-group">
+                        <label for="fpEmailAddress">Enter the email address below to reset password:</label>
+                        <input type="email" id="fpEmailAddress" class="form-control" placeholder="Email Address" required autofocus />
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                  <button type="button" class="btn btn-dark">Reset Password</button>
+                </div>
+              </div>
+            </div>
+          </div>
+</body>
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+</html>

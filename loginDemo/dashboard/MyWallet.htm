@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>My Wallet</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- Custom styles for this wireframe -->
+  <link href="dashboard.css" rel="stylesheet">
+
+  <style>
+    #walleticon {
+        width: 64px;
+        height: 64px;
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+    #walletbalance {
+      display: inline-block;
+      font-size: 28pt;
+      vertical-align: middle;
+    }
+
+    label {
+      font-weight: 500;
+    }
+  </style>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-4 col-lg-2 mr-0 px-3" style="font-size: 14pt" href="#"><b>Dashboard</b></a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
+      data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <b class=" mr-0 w-100 px-3" style="color: white; font-size: 14pt; font-weight: 500;">My Wallet</b>
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" href="#"><ion-icon name="log-out-outline"></ion-icon><span class="text">Logout</span></a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-4 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="sidebar-sticky pt-3">
+          <div class="userprofile">
+              <div>
+                <img class="profilepic" src="https://image.flaticon.com/icons/png/512/17/17004.png" />
+              </div>
+              <div class="profilename text-center">
+                LETFIX Technologies
+              </div>
+          </div>
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>MAIN MENU</span>
+            <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+            </a>
+          </h6>
+        
+         <ul class="nav flex-column" id="navigation">
+            <li class="nav-item">
+              <a class="nav-link" href="Subscriptions.htm">
+                <ion-icon name="bookmarks-outline"></ion-icon>
+                <span class="text">Subscriptions</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="PaymentHistory.htm">
+                <ion-icon name="time-outline"></ion-icon>
+                <span class="text">Payment History</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="MyReferrals.htm">
+                <ion-icon name="people-outline"></ion-icon>
+                <span class="text">My Referrals</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="MyWallet.htm">
+                <ion-icon name="wallet-outline"></ion-icon>
+                <span class="text">My Wallet</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ProfileSettings.htm">
+                <ion-icon name="person-circle-outline"></ion-icon>
+                <span class="text">Profile Settings</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../login.htm">
+                <ion-icon name="log-out-outline"></ion-icon>
+               <span class="text">Logout</span>
+              </a>
+            </li>
+          </ul>
+
+
+
+
+
+
+
+
+
+         </div>
+      </nav>
+
+      <main role="main" class="col-md-8 ml-auto col-lg-10 px-md-4" style="padding: 10px;">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#walletdetails" role="tab" aria-controls="home" aria-selected="true">Wallet Details</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#bankdetails" role="tab" aria-controls="profile" aria-selected="false">Bank Details</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#mywithdrawals" role="tab" aria-controls="contact" aria-selected="false">My Withdrawals</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" style="padding: 10px 5% 10px 5%;" id="walletdetails" role="tabpanel" aria-labelledby="home-tab">
+            <div class="row" style="margin-bottom: 100px;">
+              <div class="col-sm" style="margin-top: 20px;">
+                <h4>Wallet Balance</h3>
+                <ion-icon id="walleticon" name="wallet-outline"></ion-icon>
+                <div id="walletbalance">
+                  ₹ 500
+                </div>
+                <div id="walletrecharge" style="padding-top: 20px;">
+                  <button class="btn btn-outline-success"><ion-icon name="add-outline"></ion-icon>Add Balance</button>
+                </div>
+              </div>
+              <div class="col-sm-8" style="margin-top: 20px;">
+                <h4>Wallet Transactions</h3>
+                  <table id="walletTransactionsTable" class="table">
+                    <thead>
+                      <tr>
+                        <th>S. No.</th>
+                        <th>Date</th>
+                        <th>Order ID</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                  </table>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="bankdetails" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="row" style="padding: 10%;">
+              <div class="col-sm">
+                <div class="form-group">
+                  <label for="AccountName">Account Name</label>
+                  <input type="text" class="form-control" id="AccountName" />
+                </div>
+                <div class="form-group">
+                  <label for="AccountNumber">Account Number</label>
+                  <input type="text" class="form-control" id="AccountNumber" />
+                </div>
+                <div class="form-group">
+                  <label for="BankName">Bank Name</label>
+                  <input type="text" class="form-control" id="BankName" />
+                </div>
+                <div class="form-group">
+                  <label for="IFSC Code">IFSC Code</label>
+                  <input type="text" class="form-control" id="IFSC Code" />
+                </div>
+                <div class="form-group">
+                  <label for="BranchName">Branch Name</label>
+                  <input type="text" class="form-control" id="BranchName" />
+                </div>
+                <div class="form-group text-right">
+                  <button class="btn btn-outline-success"><ion-icon name="checkmark-outline"></ion-icon>Update Details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="mywithdrawals" role="tabpanel" aria-labelledby="contact-tab" style="padding: 10%;">
+            <h4>Withdrawal Details</h4>
+            <table id="withdrawalsTable" class="table">
+              <thead>
+                <tr>
+                  <th>S. No.</th>
+                  <th>Date</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Bootstrap, Ionic Icons and jQuery Includes -->
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+
+  <script language="javascript">
+    $(document).ready(function () {
+      $('#walletTransactionsTable, #withdrawalsTable').DataTable();
+    });
+  </script>
+</body>
+
+</html>

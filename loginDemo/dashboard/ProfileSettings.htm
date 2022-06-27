@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Dashboard Wireframe</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- Custom styles for this wireframe -->
+  <link href="dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-4 col-lg-2 mr-0 px-3" style="font-size: 14pt" href="#"><b>Dashboard</b></a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
+      data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <b class=" mr-0 w-100 px-3" style="color: white; font-size: 14pt; font-weight: 500;">Profile Settings</b>
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" href="#"><ion-icon name="log-out-outline"></ion-icon><span class="text">Logout</span></a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-4 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="sidebar-sticky pt-3">
+          <div class="userprofile">
+              <div>
+                <img class="profilepic" src="https://image.flaticon.com/icons/png/512/17/17004.png" />
+              </div>
+              <div class="profilename text-center">
+                LETFIX Technologies
+              </div>
+          </div>
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>MAIN MENU</span>
+            <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+            </a>
+          </h6>
+          <ul class="nav flex-column" id="navigation">
+            <li class="nav-item">
+              <a class="nav-link " href="Subscriptions.htm">
+                <ion-icon name="bookmarks-outline"></ion-icon>
+                <span class="text">Subscriptions</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="PaymentHistory.htm">
+                <ion-icon name="time-outline"></ion-icon>
+                <span class="text">Payment History</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="MyReferrals.htm">
+                <ion-icon name="people-outline"></ion-icon>
+                <span class="text">My Referrals</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="MyWallet.htm">
+                <ion-icon name="wallet-outline"></ion-icon>
+                <span class="text">My Wallet</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="ProfileSettings.htm">
+                <ion-icon name="person-circle-outline"></ion-icon>
+                <span class="text">Profile Settings</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../login.htm">
+                <ion-icon name="log-out-outline"></ion-icon>
+               <span class="text">Logout</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <main role="main" class="col-md-8 ml-auto col-lg-10 px-md-4" style="margin-top: 30px;">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#basic" role="tab" aria-controls="home" aria-selected="true">Basic Information</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#change" role="tab" aria-controls="profile" aria-selected="false">Change Password</a>
+         
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="basic" role="tabpanel" aria-labelledby="Basic Information">
+          
+          <div class="container" style="margin-top: 50px;">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="FullName">User Name</label>
+                        <input type="text" class="form-control" id="User Name" required
+                            aria-describedby="User NameHelp">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="mobile">phone</label>
+                        <input type="tel" class="form-control" id="phone">
+                    </div>
+                    <div class="form-group">
+                      <label for="College Name">College Name</label>
+                      <input type="text" class="form-control" id="College Name">
+                  </div>
+                  <div class="form-group">
+                    <label class="mr-sm-2" for="inlineFormCustomSelect">Year of Degree Completion</label>
+                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" required
+                        id="inlineFormCustomSelect">
+                        <option selected value="">Choose...</option>
+                        <option value="1">2022</option>
+                        <option value="2">2021</option>
+                        <option value="3">2020</option>
+                        <option value="4">2019</option>
+                        <option value="5">2018</option>
+                        <option value="5">2017</option>
+                        <option value="5">2016</option>
+                        <option value="5">College Staff</option>
+                        <option value="5">Working in Company</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                  <label class="mr-sm-2" for="inlineFormCustomSelect">Department Name</label>
+                  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" required
+                      id="inlineFormCustomSelect">
+                      <option selected value="">Choose...</option>
+                      <option value="1">B.E</option>
+                      <option value="2">B.Tech</option>
+                      <option value="3">B.Sc</option>
+                      <option value="4">B.C.A</option>
+                      <option value="5">M.S</option>
+                      <option value="5">Other</option>
+                  </select>
+                  <label for="password">Other Degree</label>
+                  <input type="text" class="form-control" id="others" required>
+              </div>
+  
+            <div class="input-group mb-3">
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                <label class="custom-file-label" for="inputGroupFile01">Upload Image</label>
+              </div>
+            </div>
+            <div class="mx-auto modal-footer" style="text-align:center;">
+                              <button type="button" class="btn btn-outline-dark btn-lg "
+                              onclick="alert('Details Updated.')">Update</button>
+                          </div>
+  
+                    
+                </div>
+            </div>
+        </div>
+    
+          </div>
+          <!--Change Password pannel-->
+          <div class="tab-pane fade" style="padding: 0 10% 0 10%;margin-top: 50px;" id="change" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="form-group" >
+              <label for="curpassword">Current Password</label>
+              <input type="password" class="form-control" id="curpassword" required>
+          </div>
+          <div class="form-group">
+            <label for="newpassword">New Password</label>
+            <input type="password" class="form-control" id="newpassword" required>
+        </div>
+          <div class="form-group">
+              <label for="ConPassword">Confirm Password</label>
+              <input type="password" class="form-control" id="ConPassword" required>
+          </div>
+          <div class="mx-auto modal-footer" style="text-align:center;">
+            <button type="button" class="btn btn-outline-dark btn-lg "
+                onclick="alert('Password Updated.')">Update</button>
+        </div>
+          </div>
+         
+      </main>
+    </div>
+  </div>
+
+  <!-- Bootstrap, Ionic Icons and jQuery Includes -->
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+
+</html>
